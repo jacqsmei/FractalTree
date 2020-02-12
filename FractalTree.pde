@@ -1,26 +1,26 @@
 private double fractionLength = .8; 
-private int smallestBranch = 10; 
-private double branchAngle = .35;  
+private int smallestBranch = 5; 
+private double branchAngle = .2;  
 private float h=0.0;
 private float s=0.0;
 private float b=255.0;
 public void setup() 
 {   
 	size(640,480); 
-	frameRate(30); 
+	frameRate(60); 
 	colorMode(HSB);  
 } 
 public void draw() 
 {   
 	background(0);   
 	stroke(0,255,0);   
-	line(320,480,320,380);   
-	drawBranches(320,400,100,3*Math.PI/2);
+	line(320,380,320,300);   
+	drawBranches(320,300,50,3*Math.PI/2);
 } 
 public void drawBranches(int x,int y, double branchLength, double angle) 
 {   
-	double angle1 = angle + branchAngle;
-	double angle2 = angle - branchAngle;
+	double angle1 = angle + branchAngle*3;
+	double angle2 = angle - branchAngle*3;
 	branchLength *=fractionLength;
 	int endX1 = (int) (branchLength*Math.cos(angle1) + x);
 	int endY1 = (int) (branchLength*Math.sin(angle1) + y);
